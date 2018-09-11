@@ -86,3 +86,9 @@ fun <X, Y> MediatorLiveData<X>.switchMap(transform: (x: X) -> LiveData<Y>): Live
 
 //Class
 fun Any.className(): String = this::class.java.simpleName
+
+//Display
+val Int.dp: Int 
+   get() = (this / Resources.getSystem().displayMetrics.density).toInt()
+val Int.px: Int
+   get() = (this * Resources.getSystem().displayMetrics.density).toInt()
